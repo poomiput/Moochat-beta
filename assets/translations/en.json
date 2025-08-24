@@ -154,7 +154,8 @@
   "reset_pin_description": "This will delete your current PIN and allow you to set a new one.",
   "cancel": "Cancel",
   "reset": "Reset",
-  "cancel_lock": "Cancel Lock"
+  "cancel_lock": "Cancel Lock",
+  "me" : "Me"
 
 
 } 

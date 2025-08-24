@@ -14,6 +14,8 @@ class ChatMessage {
   final DateTime timestamp;
   final MessageStatus status;
   final MessageType type;
+  final String username2P;
+  final String uuid2P;
 
   ChatMessage({
     String? id,
@@ -22,6 +24,8 @@ class ChatMessage {
     DateTime? timestamp,
     this.status = MessageStatus.sending,
     this.type = MessageType.text,
+    required this.username2P,
+    required this.uuid2P,
   }) : id = id ?? const Uuid().v4(),
        timestamp = timestamp ?? DateTime.now();
   factory ChatMessage.fromJson(Map<String, dynamic> json) =>

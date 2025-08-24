@@ -39,6 +39,23 @@ class MessageBubble extends StatelessWidget {
               ? CrossAxisAlignment.end
               : CrossAxisAlignment.start,
           children: [
+            // Sender name (only show if not consecutive or if it's the first message in a group)
+            if (!isConsecutive)
+              Padding(
+                padding: EdgeInsets.only(
+                  left: isMe ? 0.0 : 16.0,
+                  right: isMe ? 16.0 : 0.0,
+                  bottom: 4.0,
+                ),
+                child: Text(
+                  isMe ? context.tr("me") : message.username2P,
+                  style: CustomTextStyles.font16WhiteRegular.copyWith(
+                    color: Colors.grey[600],
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
             // Message bubble
             GestureDetector(
               onTap: message.type == MessageType.location
@@ -206,3 +223,4 @@ class MessageBubble extends StatelessWidget {
   }*/
   }
 }
+

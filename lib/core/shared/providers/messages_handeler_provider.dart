@@ -73,6 +73,7 @@ class MessageHandler {
       final String timestampStr = messageJson['timestamp'] ?? '';
       final String typeStr = messageJson['type'] ?? 'MessageType.text';
       final String senderUsername = messageJson['senderUsername'] ?? '';
+      final String senderUuid = senderId;
 
       // Parse timestamp
       DateTime timestamp;
@@ -101,6 +102,8 @@ class MessageHandler {
         timestamp: timestamp,
         status: MessageStatus.delivered,
         type: messageType,
+        username2P: senderUsername,
+        uuid2P: senderUuid,
       );
 
       // Add message to the appropriate chat

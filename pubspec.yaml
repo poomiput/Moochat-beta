@@ -5,7 +5,7 @@ description: "gaza chat is a cross-platform messaging app that allows users to c
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
-version: 0.5.5+48
+version: 0.6.0+52
 license: MIT
 
 environment:

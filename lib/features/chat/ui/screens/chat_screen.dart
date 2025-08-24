@@ -10,7 +10,6 @@ import 'package:gazachat/core/shared/providers/bluetooth_state_provider.dart';
 import 'package:gazachat/core/shared/providers/managing_bluetooth_state_privder.dart';
 import 'package:gazachat/core/theming/colors.dart';
 import 'package:gazachat/core/theming/styles.dart';
-import 'package:gazachat/features/chat/data/enums/message_status.dart';
 import 'package:gazachat/features/chat/data/models/chat_message_model.dart';
 import 'package:gazachat/features/chat/ui/widgets/chat_option.dart';
 import 'package:gazachat/features/chat/ui/widgets/custom_text_input_field.dart';
@@ -110,7 +109,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         );
 
         // Update message status based on send result
-        final updatedMessage = ChatMessage(
+        /*final updatedMessage = ChatMessage(
           id: message.id,
           text: message.text,
           isSentByMe: message.isSentByMe,
@@ -120,7 +119,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         );
 
         // Update the message status in the chat
-        /*ref
+        ref
             .read(userDataProvider.notifier)
             .updateMessageStatus(
               widget.userData.uuid2P,

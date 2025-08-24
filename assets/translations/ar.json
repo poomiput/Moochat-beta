@@ -154,6 +154,7 @@
   "reset": "إعادة تعيين",
   "passcode_lock": "قفل رمز المرور",
   "passcode_description": "أدخل رمز المرور لإلغاء قفل التطبيق",
-  "cancel_lock": "إلغاء القفل"
+  "cancel_lock": "إلغاء القفل",
+  "me": "أنا"
     
 }

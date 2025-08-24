@@ -222,8 +222,6 @@ class BluetoothStateNotifier extends StateNotifier<BluetoothState> {
 
   Future<void> connectToDevice(String deviceId, String uuid) async {
     try {
-      final String username = await SharedPrefHelper.getString('uuid');
-
       // Find the device in discovered devices to get its username
       final device = state.discoveredDevices
           .where((d) => d.id == deviceId)
@@ -316,7 +314,6 @@ class BluetoothStateNotifier extends StateNotifier<BluetoothState> {
   /// Alternative encoding method if base64 doesn't work with your Bluetooth service
   String _encodeMessageAlternative(String message) {
     try {
-      // Method 2: URL encoding for special characters
       final encoded = Uri.encodeComponent(message);
       LoggerDebug.logger.d('URL encoded message: $encoded');
       return encoded;
@@ -398,4 +395,3 @@ class BluetoothStateNotifier extends StateNotifier<BluetoothState> {
     super.dispose();
   }
 }
-

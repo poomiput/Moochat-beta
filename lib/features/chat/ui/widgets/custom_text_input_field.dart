@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gazachat/core/helpers/logger_debug.dart';
+import 'package:gazachat/core/helpers/shared_prefences.dart';
 import 'package:gazachat/core/theming/colors.dart';
 import 'package:gazachat/core/theming/styles.dart';
 import 'package:gazachat/core/widgets/feature_unavailable_dialog.dart';
@@ -11,7 +12,6 @@ import 'package:gazachat/features/chat/data/enums/message_status.dart';
 import 'package:gazachat/features/chat/data/enums/message_type.dart';
 import 'package:gazachat/features/chat/data/models/chat_message_model.dart';
 import 'package:gazachat/features/chat/ui/widgets/attachment_options.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
 import 'package:location/location.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -55,6 +55,8 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
     LoggerDebug.logger.i(
       'Location: Latitude: ${locationData.latitude}, Longitude: ${locationData.longitude}',
     );
+    final myUUID = await SharedPrefHelper.getString('uuid');
+    final myUsername = await SharedPrefHelper.getString('username');
     // call onSendMessage callback if provided
     final ChatMessage locationMessage = ChatMessage(
       text:
@@ -62,13 +64,17 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
       isSentByMe: true,
       status: MessageStatus.delivered,
       type: MessageType.location,
+      username2P: myUsername ?? 'Unknown',
+      uuid2P: myUUID ?? '',
     );
     widget.onSendMessage!(locationMessage);
     // Create a message with the location data
   }
 
-  void _sendMessage() {
+  void _sendMessage() async {
     if (_hasText) {
+      final myUUID = await SharedPrefHelper.getString('uuid');
+      final myUsername = await SharedPrefHelper.getString('username');
       final message = _textController.text.trim();
       // TODO: Add your send message logic here
       print('Sending message: $message');
@@ -76,6 +82,9 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
         text: message,
         isSentByMe: true,
         status: MessageStatus.delivered,
+        type: MessageType.text,
+        username2P: myUsername ?? 'Unknown',
+        uuid2P: myUUID ?? '',
       );
       // call function to handle sending message
       widget.onSendMessage?.call(chatMessage);
