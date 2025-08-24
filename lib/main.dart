@@ -4,7 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gazachat/core/helpers/extensions.dart';
 import 'package:gazachat/core/helpers/shared_prefences.dart';
 import 'package:gazachat/core/routing/app_router.dart';
+import 'package:gazachat/core/shared/enums/type_of_chats.dart';
 import 'package:gazachat/core/shared/models/all_chat_model.dart';
+import 'package:gazachat/core/shared/models/user_chat_model.dart';
 import 'package:gazachat/features/home/services/nearby_premission.dart';
 import 'package:gazachat/features/home/services/notifications_service.dart';
 import 'package:gazachat/gazachat_app.dart';
@@ -63,7 +65,17 @@ Future<void> isUserLoggedIn() async {
     // Initialize userChats if null or empty
     if (userChatsMap == null) {
       print('userChatsMap is null, initializing default userChats');
-      final defaultAllChat = AllChat(policy: "2023-10-07", chats: []);
+      final defaultAllChat = AllChat(
+        policy: "2023-10-07",
+        chats: [
+          UserChat(
+            username2P: "General",
+            uuid2P: "loby",
+            typeOfChat: TypeOfChats.publicChat,
+            isPinned: true,
+          ),
+        ],
+      );
       final Map<String, dynamic> defaultJson = defaultAllChat.toJson();
 
       // Debug: Print what we're trying to save
@@ -87,7 +99,17 @@ Future<void> isUserLoggedIn() async {
         );
       } catch (e) {
         print('Invalid userChats data, reinitializing: $e');
-        final defaultAllChat = AllChat(policy: "2023-10-07", chats: []);
+        final defaultAllChat = AllChat(
+          policy: "2023-10-07",
+          chats: [
+            UserChat(
+              username2P: "General",
+              uuid2P: "loby",
+              typeOfChat: TypeOfChats.publicChat,
+              isPinned: true,
+            ),
+          ],
+        );
         await SharedPrefHelper.setData('userChats', defaultAllChat.toJson());
 
         // Verify the reinitialized data
@@ -107,7 +129,17 @@ Future<void> isUserLoggedIn() async {
       );
       await SharedPrefHelper.setData('uuid', const Uuid().v4());
 
-      final defaultAllChat = AllChat(policy: "2023-10-07", chats: []);
+      final defaultAllChat = AllChat(
+        policy: "2023-10-07",
+        chats: [
+          UserChat(
+            username2P: "General",
+            uuid2P: "loby",
+            typeOfChat: TypeOfChats.publicChat,
+            isPinned: true,
+          ),
+        ],
+      );
       await SharedPrefHelper.setData('userChats', defaultAllChat.toJson());
 
       // Verify all data was saved correctly

@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gazachat/core/helpers/extensions.dart';
 import 'package:gazachat/core/routing/routes.dart';
 import 'package:gazachat/core/shared/models/user_chat_model.dart';
+import 'package:gazachat/core/shared/providers/bluetooth_state_provider.dart';
 import 'package:gazachat/core/theming/colors.dart';
 import 'package:gazachat/core/theming/styles.dart';
 import 'package:gazachat/features/chat/data/enums/message_status.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ChatRowData extends StatelessWidget {
+class ChatRowData extends ConsumerWidget {
   final UserChat userData2P;
   final String userName;
   final String lastMessage;
@@ -87,7 +89,8 @@ class ChatRowData extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bool bluetoothEnabled = ref.watch(isBluetoothOnProvider);
     return InkWell(
       onTap: () {
         context.pushNamed(
@@ -106,13 +109,16 @@ class ChatRowData extends StatelessWidget {
         child: Row(
           children: [
             // Status indicator
-            Container(
-              width: 13.w,
-              height: 13.h,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isOnline ? Colors.green : Colors.red,
-              ),
+            Icon(
+              Icons.online_prediction,
+              size: 30.w,
+              color: userData2P.uuid2P == "loby"
+                  ? bluetoothEnabled
+                        ? Colors.green
+                        : Colors.red
+                  : isOnline
+                  ? Colors.green
+                  : Colors.red,
             ),
 
             SizedBox(width: 16.w),

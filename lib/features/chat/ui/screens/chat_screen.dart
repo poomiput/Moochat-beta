@@ -181,23 +181,22 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
               style: CustomTextStyles.font20WhiteRegular,
             ),
             SizedBox(width: 8.w),
-            Container(
-              width: 8.w,
-              height: 8.w,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: isUserOnline ? Colors.green : Colors.grey,
-              ),
-            ),
-            SizedBox(width: 4.w),
-            Text(
-              isUserOnline
-                  ? context.tr("connected")
-                  : context.tr("disconnected"),
-              style: CustomTextStyles.font16GrayRegularDynamic.copyWith(
-                color: isUserOnline ? Colors.green : Colors.grey,
-              ),
-            ),
+            currentUserData.uuid2P != "loby"
+                ? const Icon(Icons.lock, color: Colors.grey, size: 20)
+                : SizedBox.shrink(),
+            SizedBox(width: 8.w),
+
+            currentUserData.uuid2P == "loby"
+                ? const Icon(
+                    Icons.public_outlined,
+                    color: Colors.white,
+                    size: 20,
+                  )
+                : Icon(
+                    isUserOnline ? Icons.online_prediction : Icons.link_off,
+                    color: isUserOnline ? Colors.green : Colors.red,
+                    size: 25.sp,
+                  ),
           ],
         ),
         actions: [
