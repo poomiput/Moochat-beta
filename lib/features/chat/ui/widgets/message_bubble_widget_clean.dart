@@ -133,17 +133,15 @@ class _MessageBubbleState extends State<MessageBubble> {
                 padding: const EdgeInsets.only(bottom: 4.0),
                 child: Text(
                   isMe ? context.tr("me") : widget.message.username2P,
-                  style: CustomTextStyles.font12WhiteRegular.copyWith(
-                    color: ColorsManager.grayColor,
+                  style: CustomTextStyles.font12GreyMedium.copyWith(
+                    color: ColorsManager.mediumGray,
                     fontSize: 11.0,
                   ),
                 ),
               ),
             Container(
               decoration: BoxDecoration(
-                color: isMe
-                    ? ColorsManager.customBlue
-                    : ColorsManager.customGray,
+                color: isMe ? ColorsManager.mainBlue : ColorsManager.darkGray,
                 borderRadius: _getBorderRadius(),
               ),
               child: Column(
@@ -161,7 +159,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                         children: [
                           Text(
                             _formatTime(widget.message.timestamp),
-                            style: CustomTextStyles.font12WhiteRegular.copyWith(
+                            style: CustomTextStyles.font12GreyMedium.copyWith(
                               color: Colors.white.withOpacity(0.7),
                               fontSize: 10.0,
                             ),
@@ -436,8 +434,10 @@ class _MessageBubbleState extends State<MessageBubble> {
         return const Icon(Icons.done_all, color: Colors.white, size: 16.0);
       case MessageStatus.read:
         return const Icon(Icons.done_all, color: Colors.blue, size: 16.0);
-      case MessageStatus.sending:
+      case MessageStatus.pending:
         return const Icon(Icons.access_time, color: Colors.grey, size: 16.0);
+      case MessageStatus.failed:
+        return const Icon(Icons.error, color: Colors.red, size: 16.0);
     }
   }
 

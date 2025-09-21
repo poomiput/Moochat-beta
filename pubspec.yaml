@@ -1,16 +1,14 @@
-name: gazachat
-description: "gaza chat is a cross-platform messaging app that allows users to communicate with each other in real-time. It is designed to be fast, secure, and easy to use, with features such as group chats, voice and video calls, and file sharing. The app is built using Flutter, a popular open-source framework for building mobile apps, and is available for both iOS and Android devices."
+name: moochat_beta
+description: "MooChat Beta is a cross-platform messaging app that allows users to communicate with each other in real-time. It is designed to be fast, secure, and easy to use, with features such as group chats, voice and video calls, and file sharing. The app is built using Flutter, a popular open-source framework for building mobile apps, and is available for both iOS and Android devices."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 0.6.0+52
 license: MIT
 
 environment:
   sdk: ^3.8.1
-
 
 dependencies:
   flutter:
@@ -19,7 +17,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  # fonts 
+  # fonts
   google_fonts: ^6.2.1
   # responsive design
   flutter_screenutil: ^5.9.3
@@ -50,13 +48,17 @@ dependencies:
   flutter_localization: ^0.3.3
   url_launcher: ^6.3.2
   timezone: ^0.10.1
+  # 🎙️ Voice Recording Dependencies
+  flutter_sound: ^9.16.3 # สำหรับบันทึกและเล่นเสียง
+  just_audio: ^0.9.40 # สำหรับเล่นเสียงที่เสถียร
+  path_provider: ^2.1.4 # หา path สำหรับเก็บไฟล์เสียง
+  audio_waveforms: ^1.1.2 # สำหรับแสดง waveform animation
   flutter_local_notifications: ^19.4.0
   pinput: ^5.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
   flutter_native_splash: ^2.4.6
   flutter_launcher_icons: ^0.14.4
@@ -65,14 +67,13 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 android_notification_icons:
-  image_path: 'assets/icons/logo_app_black.png' # required
+  image_path: "assets/icons/logo_app_black.png" # required
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -84,4 +85,3 @@ flutter:
     - assets/lottie/
     - assets/icons/
     - assets/translations/
-

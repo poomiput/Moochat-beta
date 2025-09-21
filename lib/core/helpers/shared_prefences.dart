@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper {

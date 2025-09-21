@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/theming/styles.dart';
+import 'package:moochat/core/theming/styles.dart';
 
 class UserDataRef extends StatelessWidget {
   const UserDataRef({super.key, required this.userName, required this.uuid});

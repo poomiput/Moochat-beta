@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/helpers/extensions.dart';
-import 'package:gazachat/core/helpers/shared_prefences.dart';
-import 'package:gazachat/core/routing/app_router.dart';
-import 'package:gazachat/core/shared/enums/type_of_chats.dart';
-import 'package:gazachat/core/shared/models/all_chat_model.dart';
-import 'package:gazachat/core/shared/models/user_chat_model.dart';
-import 'package:gazachat/features/home/services/nearby_premission.dart';
-import 'package:gazachat/features/home/services/notifications_service.dart';
-import 'package:gazachat/gazachat_app.dart';
+import 'package:moochat/core/helpers/extensions.dart';
+import 'package:moochat/core/helpers/shared_prefences.dart';
+import 'package:moochat/core/routing/app_router.dart';
+import 'package:moochat/core/shared/enums/type_of_chats.dart';
+import 'package:moochat/core/shared/models/all_chat_model.dart';
+import 'package:moochat/core/shared/models/user_chat_model.dart';
+import 'package:moochat/features/home/services/nearby_premission.dart';
+import 'package:moochat/features/home/services/notifications_service.dart';
+import 'package:moochat/moochat_app.dart';
 import 'package:uuid/uuid.dart';
 import 'package:easy_localization/easy_localization.dart';
 
@@ -25,12 +25,12 @@ void main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('ar')],
+      supportedLocales: [Locale('en'), Locale('th')],
       path:
           'assets/translations', // <-- change the path of the translation files
-      fallbackLocale: Locale('ar'),
-      startLocale: Locale('ar'),
-      child: ProviderScope(child: GazachatApp(appRouter: AppRouter())),
+      fallbackLocale: Locale('th'),
+      startLocale: Locale('th'),
+      child: ProviderScope(child: MooChatApp(appRouter: AppRouter())),
     ),
   );
 }

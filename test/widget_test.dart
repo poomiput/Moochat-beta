@@ -8,6 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:gazachat/main.dart';
+import 'package:moochat/main.dart';
 
 void main() {}

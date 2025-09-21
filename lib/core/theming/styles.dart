@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/core/theming/font_weight_helper.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/core/theming/font_weight_helper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextStyles {
   // Static variable to store current locale - set this in your main app
-  static String _currentLocale = 'ar';
+  static String _currentLocale = 'th';
 
   // Method to update locale - call this when locale changes
   static void updateLocale(String locale) {
@@ -45,12 +45,31 @@ class CustomTextStyles {
     required FontWeight fontWeight,
     required Color color,
   }) {
-    // Use Cairo font for Arabic - a modern, clean Arabic font
-    return GoogleFonts.cairo(
-      fontSize: fontSize,
-      fontWeight: fontWeight,
-      color: color,
-    );
+    // Choose font based on current locale
+    switch (_currentLocale) {
+      case 'th':
+        // Use Noto Sans Thai for Thai - supports Thai characters well
+        return GoogleFonts.notoSansThai(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          color: color,
+        );
+      case 'ar':
+        // Use Cairo font for Arabic - a modern, clean Arabic font
+        return GoogleFonts.cairo(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          color: color,
+        );
+      case 'en':
+      default:
+        // Use Roboto for English and default
+        return GoogleFonts.roboto(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          color: color,
+        );
+    }
   }
 
   static TextStyle font16GrayRegular = _getTextStyle(

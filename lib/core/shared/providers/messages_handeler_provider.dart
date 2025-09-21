@@ -2,13 +2,13 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
-import 'package:gazachat/core/shared/providers/managing_bluetooth_state_privder.dart';
-import 'package:gazachat/features/chat/data/enums/message_status.dart';
-import 'package:gazachat/features/chat/data/enums/message_type.dart';
-import 'package:gazachat/features/chat/data/models/chat_message_model.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
-import 'package:gazachat/features/home/services/notifications_service.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/shared/providers/managing_bluetooth_state_privder.dart';
+import 'package:moochat/features/chat/data/enums/message_status.dart';
+import 'package:moochat/features/chat/data/enums/message_type.dart';
+import 'package:moochat/features/chat/data/models/chat_message_model.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/features/home/services/notifications_service.dart';
 
 // Provider to handle incoming Bluetooth messages
 final messageHandlerProvider = Provider<MessageHandler>((ref) {

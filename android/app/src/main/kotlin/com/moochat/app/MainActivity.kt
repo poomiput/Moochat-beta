@@ -1,4 +1,4 @@
-package free.palestine.gazachat
+package com.moochat.app
 
 import io.flutter.embedding.android.FlutterActivity
 

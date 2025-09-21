@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
 
 class ErrorLoadedUserData extends ConsumerWidget {
   const ErrorLoadedUserData({super.key, required this.error});

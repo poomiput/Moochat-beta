@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
-import 'package:gazachat/features/home/ui/widgets/about_app.dart';
-import 'package:gazachat/features/home/ui/widgets/home_options.dart';
-import 'package:gazachat/features/home/ui/widgets/my_qr_box.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/features/home/ui/widgets/about_app.dart';
+import 'package:moochat/features/home/ui/widgets/home_options.dart';
+import 'package:moochat/features/home/ui/widgets/my_qr_box.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CustomAppBar extends ConsumerStatefulWidget

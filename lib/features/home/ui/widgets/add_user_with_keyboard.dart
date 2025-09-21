@@ -2,11 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/helpers/extensions.dart';
-import 'package:gazachat/core/routing/routes.dart';
-import 'package:gazachat/core/shared/models/user_chat_model.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/core/helpers/extensions.dart';
+import 'package:moochat/core/routing/routes.dart';
+import 'package:moochat/core/shared/models/user_chat_model.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
 
 class AddUserDialog extends ConsumerStatefulWidget {
   const AddUserDialog({super.key, this.headerText});

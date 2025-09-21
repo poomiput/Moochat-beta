@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'package:ai_barcode_scanner/ai_barcode_scanner.dart';
 import 'package:flutter/material.dart';
-import 'package:gazachat/core/helpers/extensions.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/helpers/extensions.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/routing/routes.dart';
-import 'package:gazachat/core/shared/models/user_chat_model.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/core/routing/routes.dart';
+import 'package:moochat/core/shared/models/user_chat_model.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
 
 class ScannerScreen extends ConsumerStatefulWidget {
   const ScannerScreen({super.key});

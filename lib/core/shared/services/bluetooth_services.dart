@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:gazachat/core/helpers/logger_debug.dart';
-import 'package:gazachat/core/shared/models/nearbay_device_info.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/shared/models/nearbay_device_info.dart';
 import 'package:nearby_connections/nearby_connections.dart';
 
-class BluetoothServicesGazachat {
+class BluetoothServicesmoochat {
   // Streams for device events
   final StreamController<NearbayDeviceInfo> _deviceFoundController =
       StreamController<NearbayDeviceInfo>.broadcast();
@@ -67,7 +67,7 @@ class BluetoothServicesGazachat {
             final device = NearbayDeviceInfo(
               id: id,
               uuid: deviceUuid,
-              serviceId: "free.palestine.gazachat",
+              serviceId: "free.palestine.moochat",
             );
 
             _deviceConnectedController.add(device);
@@ -80,7 +80,7 @@ class BluetoothServicesGazachat {
           // Remove from discovered devices cache
           _discoveredDevices.remove(id);
         },
-        serviceId: "free.palestine.gazachat", // uniquely identifies your app
+        serviceId: "free.palestine.moochat", // uniquely identifies your app
       );
     } catch (exception) {
       LoggerDebug.logger.e('Error starting advertising: $exception');
@@ -121,7 +121,7 @@ class BluetoothServicesGazachat {
             _discoveredDevices.remove(id);
           }
         },
-        serviceId: "free.palestine.gazachat",
+        serviceId: "free.palestine.moochat",
       );
     } catch (e) {
       LoggerDebug.logger.e('Error starting discovery: $e');
@@ -172,7 +172,7 @@ class BluetoothServicesGazachat {
             final device = NearbayDeviceInfo(
               id: id,
               uuid: deviceUuid,
-              serviceId: "free.palestine.gazachat",
+              serviceId: "free.palestine.moochat",
             );
             _deviceConnectedController.add(device);
           }

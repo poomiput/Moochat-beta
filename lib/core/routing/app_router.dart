@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gazachat/core/routing/routes.dart';
-import 'package:gazachat/features/chat/ui/screens/chat_screen.dart';
-import 'package:gazachat/features/home/ui/screens/home_page.dart';
-import 'package:gazachat/features/invite/ui/screens/my_qr_screen.dart';
-import 'package:gazachat/features/invite/ui/screens/scanner_screen.dart';
+import 'package:moochat/core/routing/routes.dart';
+import 'package:moochat/features/chat/ui/screens/chat_screen.dart';
+import 'package:moochat/features/home/ui/screens/home_page.dart';
+import 'package:moochat/features/invite/ui/screens/my_qr_screen.dart';
+import 'package:moochat/features/invite/ui/screens/scanner_screen.dart';
 
 // NOTE: This file is responsible for routing in the app.
 class AppRouter {

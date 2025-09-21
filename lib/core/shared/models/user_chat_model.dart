@@ -1,5 +1,5 @@
-import 'package:gazachat/core/shared/enums/type_of_chats.dart';
-import 'package:gazachat/features/chat/data/models/chat_message_model.dart';
+import 'package:moochat/core/shared/enums/type_of_chats.dart';
+import 'package:moochat/features/chat/data/models/chat_message_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'user_chat_model.g.dart';
 

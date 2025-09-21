@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gazachat/core/helpers/extensions.dart';
-import 'package:gazachat/core/routing/routes.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/core/theming/styles.dart';
+import 'package:moochat/core/helpers/extensions.dart';
+import 'package:moochat/core/routing/routes.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/core/theming/styles.dart';
 
 class AddNewContactBox extends StatelessWidget {
   const AddNewContactBox({super.key});

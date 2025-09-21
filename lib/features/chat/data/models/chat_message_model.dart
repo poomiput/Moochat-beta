@@ -1,5 +1,5 @@
-import 'package:gazachat/features/chat/data/enums/message_status.dart';
-import 'package:gazachat/features/chat/data/enums/message_type.dart';
+import 'package:moochat/features/chat/data/enums/message_status.dart';
+import 'package:moochat/features/chat/data/enums/message_type.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:json_annotation/json_annotation.dart';

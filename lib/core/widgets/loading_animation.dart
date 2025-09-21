@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:gazachat/core/theming/colors.dart';
+import 'package:moochat/core/theming/colors.dart';
 
 class CustomLoadingAnimation extends StatelessWidget {
   const CustomLoadingAnimation({super.key, required this.size});

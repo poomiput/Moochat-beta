@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert'; // Add this import for UTF-8 encoding
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
-import 'package:gazachat/core/helpers/shared_prefences.dart';
-import 'package:gazachat/core/shared/models/nearbay_device_info.dart';
-import 'package:gazachat/core/shared/services/bluetooth_services.dart';
-import 'package:gazachat/features/home/services/notifications_service.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/helpers/shared_prefences.dart';
+import 'package:moochat/core/shared/models/nearbay_device_info.dart';
+import 'package:moochat/core/shared/services/bluetooth_services.dart';
+import 'package:moochat/features/home/services/notifications_service.dart';
 
 // Provider for managing Bluetooth state with discovered and connected devices
 final nearbayStateProvider =
@@ -53,8 +53,7 @@ class BluetoothStateNotifier extends StateNotifier<BluetoothState> {
     state = state.copyWith(messageStream: _bluetoothService.onMessageReceived);
   }
 
-  final BluetoothServicesGazachat _bluetoothService =
-      BluetoothServicesGazachat();
+  final BluetoothServicesmoochat _bluetoothService = BluetoothServicesmoochat();
 
   StreamSubscription<NearbayDeviceInfo>? _deviceFoundSubscription;
   StreamSubscription<String>? _deviceLostSubscription;

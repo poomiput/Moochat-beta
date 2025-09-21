@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "moochat_app (development)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "development", "--target", "lib/main.dart"],
+      "deviceId": "emulator-5554"
+    },
+    {
+      "name": "moochat_app (production)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--flavor", "production", "--target", "lib/main.dart"],
+      "deviceId": "emulator-5554"
+    }
+  ]
+}

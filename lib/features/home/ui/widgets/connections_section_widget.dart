@@ -2,11 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/shared/providers/bluetooth_state_provider.dart';
-import 'package:gazachat/core/shared/providers/managing_bluetooth_state_privder.dart';
-import 'package:gazachat/core/theming/colors.dart';
-import 'package:gazachat/core/theming/styles.dart';
-import 'package:gazachat/features/home/providrs/user_data_provider.dart';
+import 'package:moochat/core/shared/providers/bluetooth_state_provider.dart';
+import 'package:moochat/core/shared/providers/managing_bluetooth_state_privder.dart';
+import 'package:moochat/core/theming/colors.dart';
+import 'package:moochat/core/theming/styles.dart';
+import 'package:moochat/features/home/providrs/user_data_provider.dart';
 
 class ConnectionsSectionWidget extends ConsumerStatefulWidget {
   const ConnectionsSectionWidget({super.key});

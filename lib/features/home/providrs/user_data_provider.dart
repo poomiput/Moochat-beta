@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gazachat/core/helpers/logger_debug.dart';
-import 'package:gazachat/core/helpers/shared_prefences.dart';
-import 'package:gazachat/core/shared/models/all_chat_model.dart';
-import 'package:gazachat/core/shared/models/user_chat_model.dart';
-import 'package:gazachat/features/chat/data/models/chat_message_model.dart';
-import 'package:gazachat/features/home/data/models/user_data_model.dart';
+import 'package:moochat/core/helpers/logger_debug.dart';
+import 'package:moochat/core/helpers/shared_prefences.dart';
+import 'package:moochat/core/shared/models/all_chat_model.dart';
+import 'package:moochat/core/shared/models/user_chat_model.dart';
+import 'package:moochat/features/chat/data/models/chat_message_model.dart';
+import 'package:moochat/features/home/data/models/user_data_model.dart';
 
 // User data provider to manage user information
 final userDataProvider =

@@ -1,4 +1,4 @@
-import 'package:gazachat/core/shared/models/all_chat_model.dart';
+import 'package:moochat/core/shared/models/all_chat_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'user_data_model.g.dart';
 
