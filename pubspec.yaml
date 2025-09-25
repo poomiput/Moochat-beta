@@ -1,5 +1,5 @@
-name: moochat_beta
-description: "MooChat Beta is a cross-platform messaging app that allows users to communicate with each other in real-time. It is designed to be fast, secure, and easy to use, with features such as group chats, voice and video calls, and file sharing. The app is built using Flutter, a popular open-source framework for building mobile apps, and is available for both iOS and Android devices."
+name: moochat
+description: "MooChat is a modern, minimalist messaging app built with Flutter. Features real-time communication, secure messaging, and a beautiful user interface designed for the modern user. Perfect for personal and professional conversations with advanced features like voice messages, file sharing, and group chats."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev

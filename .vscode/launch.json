@@ -7,7 +7,7 @@
       "type": "dart",
       "program": "lib/main.dart",
       "args": ["--flavor", "development", "--target", "lib/main.dart"],
-      "deviceId": "emulator-5554"
+      "deviceId": "R5CR112GPLR"
     },
     {
       "name": "moochat_app (production)",
@@ -15,7 +15,7 @@
       "type": "dart",
       "program": "lib/main.dart",
       "args": ["--flavor", "production", "--target", "lib/main.dart"],
-      "deviceId": "emulator-5554"
+      "deviceId": "R5CR112GPLR"
     }
   ]
 }

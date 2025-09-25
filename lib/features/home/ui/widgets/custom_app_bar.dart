@@ -63,8 +63,19 @@ class _CustomAppBarState extends ConsumerState<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: ColorsManager.backgroundColor,
-      // add multiple colores in backgroundColor
+      backgroundColor: ColorsManager.surfaceColor,
+      elevation: 0,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          color: ColorsManager.surfaceColor,
+          border: Border(
+            bottom: BorderSide(
+              color: ColorsManager.borderColor.withOpacity(0.3),
+              width: 0.5,
+            ),
+          ),
+        ),
+      ),
       title: const MyQrBox(),
       centerTitle: true,
       actions: [

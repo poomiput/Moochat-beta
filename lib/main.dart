@@ -50,7 +50,8 @@ Future<void> isUserLoggedIn() async {
 
     if (username.isNullOrEmpty()) {
       // If username is null or empty, generate a new username
-      final String newUsername = RandomUsernameGenerator.generateGazaUsername();
+      final String newUsername =
+          RandomUsernameGenerator.generateModernUsername();
       await SharedPrefHelper.setData('username', newUsername);
       print('Generated new username: $newUsername');
     }
@@ -125,7 +126,7 @@ Future<void> isUserLoggedIn() async {
     try {
       await SharedPrefHelper.setData(
         'username',
-        RandomUsernameGenerator.generateGazaUsername(),
+        RandomUsernameGenerator.generateModernUsername(),
       );
       await SharedPrefHelper.setData('uuid', const Uuid().v4());
 

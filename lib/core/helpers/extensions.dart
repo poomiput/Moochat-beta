@@ -84,21 +84,23 @@ extension RandomUsernameGenerator on String {
     return username;
   }
 
-  /// Generates a Gaza-themed random username
-  static String generateGazaUsername() {
-    final List<String> gazaPrefixes = [
-      'gaza',
-      'palestine',
-      'free',
-      'hope',
-      'peace',
-      'unity',
-      'strong',
-      'brave',
+  /// Generates a modern random username for professional use
+  static String generateModernUsername() {
+    final List<String> modernPrefixes = [
+      'user',
+      'chat',
+      'connect',
+      'modern',
+      'swift',
+      'bright',
+      'smart',
+      'wave',
+      'spark',
+      'flow',
     ];
 
     final Random random = Random();
-    final String prefix = gazaPrefixes[random.nextInt(gazaPrefixes.length)];
+    final String prefix = modernPrefixes[random.nextInt(modernPrefixes.length)];
     final String randomPart = generateRandomUsername(
       length: 4,
       includeNumbers: true,

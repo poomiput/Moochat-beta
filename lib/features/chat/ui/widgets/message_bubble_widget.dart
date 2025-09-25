@@ -134,7 +134,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                 child: Text(
                   isMe ? context.tr("me") : widget.message.username2P,
                   style: CustomTextStyles.font12WhiteRegular.copyWith(
-                    color: ColorsManager.grayColor,
+                    color: ColorsManager.mutedText,
                     fontSize: 11.0,
                   ),
                 ),
@@ -142,9 +142,20 @@ class _MessageBubbleState extends State<MessageBubble> {
             Container(
               decoration: BoxDecoration(
                 color: isMe
-                    ? ColorsManager.customBlue
-                    : ColorsManager.customGray,
+                    ? ColorsManager.interactiveGrey
+                    : ColorsManager.cardColor,
                 borderRadius: _getBorderRadius(),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+                border: Border.all(
+                  color: ColorsManager.borderColor.withOpacity(0.5),
+                  width: 0.5,
+                ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +173,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                           Text(
                             _formatTime(widget.message.timestamp),
                             style: CustomTextStyles.font12WhiteRegular.copyWith(
-                              color: Colors.white.withOpacity(0.7),
+                              color: ColorsManager.tertiaryText,
                               fontSize: 10.0,
                             ),
                           ),
@@ -190,13 +201,13 @@ class _MessageBubbleState extends State<MessageBubble> {
           children: [
             Row(
               children: [
-                const Icon(Icons.image, color: Colors.white, size: 20.0),
+                Icon(Icons.image, color: ColorsManager.primaryText, size: 20.0),
                 const SizedBox(width: 8.0),
                 Expanded(
                   child: Text(
                     "📸 รูปภาพ",
                     style: CustomTextStyles.font16WhiteRegular.copyWith(
-                      color: Colors.white,
+                      color: ColorsManager.primaryText,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -215,15 +226,19 @@ class _MessageBubbleState extends State<MessageBubble> {
                   return Container(
                     width: 200.0,
                     height: 150.0,
-                    color: Colors.grey[800],
-                    child: const Column(
+                    color: ColorsManager.elevatedColor,
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.error, color: Colors.red, size: 30.0),
-                        SizedBox(height: 8.0),
+                        Icon(
+                          Icons.error,
+                          color: ColorsManager.errorColor,
+                          size: 30.0,
+                        ),
+                        const SizedBox(height: 8.0),
                         Text(
                           "รูปภาพเสียหาย",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: ColorsManager.primaryText),
                         ),
                       ],
                     ),
@@ -235,7 +250,7 @@ class _MessageBubbleState extends State<MessageBubble> {
             Text(
               "แตะเพื่อดูขนาดเต็ม",
               style: CustomTextStyles.font16WhiteRegular.copyWith(
-                color: Colors.white.withOpacity(0.8),
+                color: ColorsManager.secondaryText,
                 fontSize: 12.0,
                 fontStyle: FontStyle.italic,
               ),
@@ -248,12 +263,12 @@ class _MessageBubbleState extends State<MessageBubble> {
           children: [
             Row(
               children: [
-                const Icon(Icons.error, color: Colors.red, size: 20.0),
+                Icon(Icons.error, color: ColorsManager.errorColor, size: 20.0),
                 const SizedBox(width: 8.0),
                 Text(
                   "❌ รูปภาพเสียหาย",
                   style: CustomTextStyles.font16WhiteRegular.copyWith(
-                    color: Colors.red,
+                    color: ColorsManager.errorColor,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -263,7 +278,7 @@ class _MessageBubbleState extends State<MessageBubble> {
             Text(
               "ไม่สามารถแสดงรูปนี้ได้",
               style: CustomTextStyles.font16WhiteRegular.copyWith(
-                color: Colors.white.withOpacity(0.8),
+                color: ColorsManager.secondaryText,
                 fontSize: 12.0,
               ),
             ),
@@ -295,17 +310,17 @@ class _MessageBubbleState extends State<MessageBubble> {
           Container(
             padding: const EdgeInsets.all(8.0),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: ColorsManager.elevatedColor.withOpacity(0.7),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Column(
               children: [
-                const Icon(Icons.map, color: Colors.white, size: 40.0),
+                Icon(Icons.map, color: ColorsManager.primaryText, size: 40.0),
                 const SizedBox(height: 8.0),
                 Text(
                   "แตะเพื่อดูตำแหน่ง",
                   style: CustomTextStyles.font16WhiteRegular.copyWith(
-                    color: Colors.white.withOpacity(0.8),
+                    color: ColorsManager.secondaryText,
                     fontSize: 12.0,
                     fontStyle: FontStyle.italic,
                   ),
@@ -324,13 +339,13 @@ class _MessageBubbleState extends State<MessageBubble> {
           // Header เสียง
           Row(
             children: [
-              const Icon(Icons.mic, color: Colors.white, size: 20.0),
+              Icon(Icons.mic, color: ColorsManager.primaryText, size: 20.0),
               const SizedBox(width: 8.0),
               Expanded(
                 child: Text(
                   "🎙️ ข้อความเสียง",
                   style: CustomTextStyles.font16WhiteRegular.copyWith(
-                    color: Colors.white,
+                    color: ColorsManager.primaryText,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -343,7 +358,7 @@ class _MessageBubbleState extends State<MessageBubble> {
           Container(
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
+              color: ColorsManager.elevatedColor.withOpacity(0.7),
               borderRadius: BorderRadius.circular(8.0),
             ),
             child: Row(
@@ -357,13 +372,13 @@ class _MessageBubbleState extends State<MessageBubble> {
                     height: 40.0,
                     decoration: BoxDecoration(
                       color: _isPlayingThisMessage
-                          ? Colors.white.withOpacity(0.3)
-                          : Colors.white.withOpacity(0.2),
+                          ? ColorsManager.hoverGrey
+                          : ColorsManager.interactiveGrey,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Icon(
                       _isPlayingThisMessage ? Icons.pause : Icons.play_arrow,
-                      color: Colors.white,
+                      color: ColorsManager.primaryText,
                       size: 22.0,
                     ),
                   ),
@@ -378,7 +393,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                     Text(
                       _isPlayingThisMessage ? "กำลังเล่น..." : "ข้อความเสียง",
                       style: CustomTextStyles.font16WhiteRegular.copyWith(
-                        color: Colors.white,
+                        color: ColorsManager.primaryText,
                         fontSize: 14.0,
                         fontWeight: FontWeight.w500,
                       ),
@@ -387,7 +402,7 @@ class _MessageBubbleState extends State<MessageBubble> {
                     Text(
                       "กดเพื่อเล่น",
                       style: CustomTextStyles.font16WhiteRegular.copyWith(
-                        color: Colors.white.withOpacity(0.7),
+                        color: ColorsManager.secondaryText,
                         fontSize: 12.0,
                       ),
                     ),
@@ -404,7 +419,7 @@ class _MessageBubbleState extends State<MessageBubble> {
       return Text(
         widget.message.text,
         style: CustomTextStyles.font16WhiteRegular.copyWith(
-          color: Colors.white,
+          color: ColorsManager.primaryText,
           height: 1.4,
         ),
       );
@@ -431,13 +446,25 @@ class _MessageBubbleState extends State<MessageBubble> {
   Widget _buildMessageStatus(MessageStatus status) {
     switch (status) {
       case MessageStatus.sent:
-        return const Icon(Icons.check, color: Colors.white, size: 16.0);
+        return Icon(Icons.check, color: ColorsManager.tertiaryText, size: 16.0);
       case MessageStatus.delivered:
-        return const Icon(Icons.done_all, color: Colors.white, size: 16.0);
+        return Icon(
+          Icons.done_all,
+          color: ColorsManager.tertiaryText,
+          size: 16.0,
+        );
       case MessageStatus.read:
-        return const Icon(Icons.done_all, color: Colors.blue, size: 16.0);
+        return Icon(
+          Icons.done_all,
+          color: ColorsManager.accentColor,
+          size: 16.0,
+        );
       case MessageStatus.sending:
-        return const Icon(Icons.access_time, color: Colors.grey, size: 16.0);
+        return Icon(
+          Icons.access_time,
+          color: ColorsManager.mutedText,
+          size: 16.0,
+        );
     }
   }
 

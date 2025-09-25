@@ -88,16 +88,33 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(context: context, builder: (_) => AddUserDialog());
-        },
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        backgroundColor: ColorsManager.customGray,
-        child: Icon(
-          Icons.keyboard,
-          color: ColorsManager.whiteColor,
-          size: 30.sp,
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [ColorsManager.mainColor, ColorsManager.accentColor],
+          ),
+          borderRadius: BorderRadius.circular(16.r),
+          boxShadow: [
+            BoxShadow(
+              color: ColorsManager.mainColor.withOpacity(0.4),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            ),
+          ],
+        ),
+        child: FloatingActionButton(
+          onPressed: () {
+            showDialog(context: context, builder: (_) => AddUserDialog());
+          },
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          child: Icon(
+            Icons.add_rounded,
+            color: ColorsManager.whiteColor,
+            size: 28.sp,
+          ),
         ),
       ),
       backgroundColor: ColorsManager.backgroundColor,
@@ -218,4 +235,3 @@ class _HomePageState extends ConsumerState<HomePage> {
     super.dispose();
   }
 }
-

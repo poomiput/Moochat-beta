@@ -143,17 +143,17 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
             margin: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
             decoration: BoxDecoration(
-              color: ColorsManager.customGray.withOpacity(1),
-              borderRadius: BorderRadius.circular(32.r),
+              color: ColorsManager.cardColor,
+              borderRadius: BorderRadius.circular(28.r),
               border: Border.all(
-                color: Colors.white.withOpacity(0.1),
+                color: ColorsManager.borderColor.withOpacity(0.4),
                 width: 1.w,
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
-                  blurRadius: 8.r,
-                  offset: Offset(0, 2.h),
+                  blurRadius: 12.r,
+                  offset: Offset(0, 3.h),
                 ),
               ],
             ),
@@ -165,7 +165,7 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                   child: IconButton(
                     icon: Icon(
                       Icons.add_circle_outline,
-                      color: Colors.white.withOpacity(0.7),
+                      color: ColorsManager.secondaryText,
                       size: 24.sp,
                     ),
                     onPressed: () {
@@ -187,17 +187,18 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                       keyboardType: TextInputType.multiline,
                       textInputAction: TextInputAction.newline,
                       cursorWidth: 2.5.w,
-                      cursorColor: ColorsManager.whiteColor,
+                      cursorColor: ColorsManager.primaryText,
                       cursorRadius: Radius.circular(2.r),
                       cursorOpacityAnimates: true,
                       focusNode: _focusNode,
                       style: CustomTextStyles.font16WhiteRegular.copyWith(
+                        color: ColorsManager.primaryText,
                         height: 1.4,
                       ),
                       decoration: InputDecoration(
                         hintText: context.tr("write_message"),
                         hintStyle: CustomTextStyles.font16WhiteRegular.copyWith(
-                          color: Colors.white.withOpacity(0.5),
+                          color: ColorsManager.tertiaryText,
                         ),
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.symmetric(
@@ -227,8 +228,8 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                           ? Icons.keyboard
                           : Icons.emoji_emotions_outlined,
                       color: _showEmojiPicker
-                          ? ColorsManager.customGreen
-                          : Colors.white.withOpacity(0.7),
+                          ? ColorsManager.accentColor
+                          : ColorsManager.secondaryText,
                       size: 24.sp,
                     ),
                     onPressed: _toggleEmojiPicker,
@@ -241,13 +242,13 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                   margin: EdgeInsets.only(left: 4.w, right: 4.w),
                   decoration: BoxDecoration(
                     color: _hasText
-                        ? ColorsManager.customGreen
-                        : Colors.white.withOpacity(0.1),
+                        ? ColorsManager.accentColor
+                        : ColorsManager.elevatedColor.withOpacity(0.7),
                     borderRadius: BorderRadius.circular(24.r),
                     boxShadow: _hasText
                         ? [
                             BoxShadow(
-                              color: ColorsManager.customGreen.withOpacity(0.3),
+                              color: ColorsManager.accentColor.withOpacity(0.3),
                               blurRadius: 8.r,
                               offset: Offset(0, 2.h),
                             ),
@@ -257,7 +258,7 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                   child: IconButton(
                     icon: Icon(
                       _hasText ? Icons.send_rounded : Icons.mic,
-                      color: Colors.white,
+                      color: ColorsManager.primaryText,
                       size: 20.sp,
                     ),
                     onPressed: _hasText ? _sendMessage : _recordVoice,
@@ -303,7 +304,7 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                   noRecents: Text(
                     'No Recents',
                     style: CustomTextStyles.font16WhiteRegular.copyWith(
-                      color: Colors.white.withOpacity(0.5),
+                      color: ColorsManager.tertiaryText,
                       fontSize: 20.sp,
                     ),
                     textAlign: TextAlign.center,
@@ -318,17 +319,17 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                 ),
                 skinToneConfig: SkinToneConfig(
                   dialogBackgroundColor: ColorsManager.backgroundColor,
-                  indicatorColor: Colors.white.withOpacity(0.5),
+                  indicatorColor: ColorsManager.accentColor,
                 ),
                 categoryViewConfig: CategoryViewConfig(
                   tabBarHeight: 46.h,
                   tabIndicatorAnimDuration: const Duration(milliseconds: 300),
                   initCategory: Category.RECENT,
                   backgroundColor: ColorsManager.backgroundColor,
-                  indicatorColor: ColorsManager.customGreen,
-                  iconColor: Colors.white.withOpacity(0.7),
-                  iconColorSelected: ColorsManager.customGreen,
-                  backspaceColor: ColorsManager.customGreen,
+                  indicatorColor: ColorsManager.accentColor,
+                  iconColor: ColorsManager.secondaryText,
+                  iconColorSelected: ColorsManager.accentColor,
+                  backspaceColor: ColorsManager.accentColor,
                   categoryIcons: const CategoryIcons(),
                   extraTab: CategoryExtraTab.NONE,
                 ),
@@ -336,12 +337,12 @@ class _CustomTextInputFieldState extends ConsumerState<CustomTextInputField> {
                   showBackspaceButton: true,
                   showSearchViewButton: true,
                   backgroundColor: ColorsManager.backgroundColor,
-                  buttonColor: Colors.white.withOpacity(0.1),
-                  buttonIconColor: Colors.white.withOpacity(0.7),
+                  buttonColor: ColorsManager.elevatedColor.withOpacity(0.7),
+                  buttonIconColor: ColorsManager.secondaryText,
                 ),
                 searchViewConfig: SearchViewConfig(
                   backgroundColor: ColorsManager.backgroundColor,
-                  buttonIconColor: Colors.white.withOpacity(0.7),
+                  buttonIconColor: ColorsManager.secondaryText,
                   hintText: 'Search emoji',
                 ),
               ),

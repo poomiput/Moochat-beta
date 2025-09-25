@@ -25,19 +25,24 @@ class _HeaderState extends ConsumerState<Header> {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(24.r),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            ColorsManager.backgroundColor,
-            ColorsManager.customGray.withOpacity(0.3),
+            ColorsManager.surfaceColor,
+            ColorsManager.cardColor.withOpacity(0.8),
           ],
+        ),
+        border: Border.all(
+          color: ColorsManager.mainColor.withOpacity(0.1),
+          width: 1,
         ),
         boxShadow: [
           BoxShadow(
-            color: ColorsManager.mainColor.withOpacity(0.1),
-            blurRadius: 10,
-            offset: const Offset(0, 2),
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
           ),
         ],
       ),

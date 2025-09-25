@@ -67,7 +67,7 @@ class BluetoothServicesmoochat {
             final device = NearbayDeviceInfo(
               id: id,
               uuid: deviceUuid,
-              serviceId: "free.palestine.moochat",
+              serviceId: "com.moochat.app.modern",
             );
 
             _deviceConnectedController.add(device);
@@ -80,7 +80,7 @@ class BluetoothServicesmoochat {
           // Remove from discovered devices cache
           _discoveredDevices.remove(id);
         },
-        serviceId: "free.palestine.moochat", // uniquely identifies your app
+        serviceId: "com.moochat.app.modern", // uniquely identifies your app
       );
     } catch (exception) {
       LoggerDebug.logger.e('Error starting advertising: $exception');
@@ -121,7 +121,7 @@ class BluetoothServicesmoochat {
             _discoveredDevices.remove(id);
           }
         },
-        serviceId: "free.palestine.moochat",
+        serviceId: "com.moochat.app.modern",
       );
     } catch (e) {
       LoggerDebug.logger.e('Error starting discovery: $e');
@@ -172,7 +172,7 @@ class BluetoothServicesmoochat {
             final device = NearbayDeviceInfo(
               id: id,
               uuid: deviceUuid,
-              serviceId: "free.palestine.moochat",
+              serviceId: "com.moochat.app.modern",
             );
             _deviceConnectedController.add(device);
           }

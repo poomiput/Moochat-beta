@@ -377,65 +377,65 @@ class _MessageBubbleState extends State<MessageBubble> {
           ),
           const SizedBox(height: 8.0),
 
-        ],
-      ),
-      const SizedBox(height: 12.0),
-
-      // Simple voice message display - no waveform
-      Container(
-        padding: const EdgeInsets.all(12.0),
-        decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.1),
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // ปุ่ม Play/Pause
-            GestureDetector(
-              onTap: _toggleAudioPlayback,
-              child: Container(
-                width: 40.0,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: _isPlayingThisMessage
-                      ? Colors.white.withOpacity(0.3)
-                      : Colors.white.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                child: Icon(
-                  _isPlayingThisMessage ? Icons.pause : Icons.play_arrow,
-                  color: Colors.white,
-                  size: 22.0,
-                ),
-              ),
+          // Simple voice message display - no waveform
+          Container(
+            padding: const EdgeInsets.all(12.0),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8.0),
             ),
-
-            const SizedBox(width: 12.0),
-
-            // Voice message info
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  _isPlayingThisMessage ? "กำลังเล่น..." : "ข้อความเสียง",
-                  style: CustomTextStyles.font16WhiteRegular.copyWith(
-                    color: Colors.white,
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w500,
+                // ปุ่ม Play/Pause
+                GestureDetector(
+                  onTap: _toggleAudioPlayback,
+                  child: Container(
+                    width: 40.0,
+                    height: 40.0,
+                    decoration: BoxDecoration(
+                      color: _isPlayingThisMessage
+                          ? Colors.white.withOpacity(0.3)
+                          : Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Icon(
+                      _isPlayingThisMessage ? Icons.pause : Icons.play_arrow,
+                      color: Colors.white,
+                      size: 22.0,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 2.0),
-                Text(
-                  "กดเพื่อเล่น",
-                  style: CustomTextStyles.font16WhiteRegular.copyWith(
-                    color: Colors.white.withOpacity(0.7),
-                    fontSize: 12.0,
-                  ),
+
+                const SizedBox(width: 12.0),
+
+                // Voice message info
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      _isPlayingThisMessage ? "กำลังเล่น..." : "ข้อความเสียง",
+                      style: CustomTextStyles.font16WhiteRegular.copyWith(
+                        color: Colors.white,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const SizedBox(height: 2.0),
+                    Text(
+                      "กดเพื่อเล่น",
+                      style: CustomTextStyles.font16WhiteRegular.copyWith(
+                        color: Colors.white.withOpacity(0.7),
+                        fontSize: 12.0,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],          const SizedBox(height: 8.0),
+          ),
+
+          const SizedBox(height: 8.0),
 
           // ปุ่ม Play/Pause และ duration
           Row(
